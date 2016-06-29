@@ -1,4 +1,4 @@
-FROM percona
+FROM yfix/percona
 
 MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 
