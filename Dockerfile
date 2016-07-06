@@ -3,7 +3,7 @@ FROM yfix/baseimage
 MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 
 RUN pkg_name=percona-release_0.1-3.$(lsb_release -sc)_all.deb \
-  && curl -o- https://repo.percona.com/apt/$pkg_name | dpkg -i $pkg_name \
+  && curl -O https://repo.percona.com/apt/$pkg_name && dpkg -i $pkg_name && rm $pkg_name \
   && apt-get update \
   && apt-get install -y \
     percona-xtrabackup-24 \
