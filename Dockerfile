@@ -1,4 +1,4 @@
-FROM yfix/percona
+FROM yfix/baseimage
 
 MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 
