@@ -2,9 +2,11 @@ FROM yfix/percona
 
 MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 
-RUN apt-get update \
+RUN wget https://repo.percona.com/apt/percona-release_0.1-3.$(lsb_release -sc)_all.deb \
+  && dpkg -i percona-release_0.1-3.$(lsb_release -sc)_all.deb \
+  && apt-get update \
   && apt-get install -y \
-    percona-xtrabackup \
+    percona-xtrabackup-24 \
   \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* \
