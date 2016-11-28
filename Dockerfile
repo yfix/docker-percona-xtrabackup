@@ -1,8 +1,8 @@
-FROM yfix/baseimage
+FROM yfix/baseimage:16.04
 
 MAINTAINER Yuri Vysotskiy (yfix) <yfix.dev@gmail.com>
 
-RUN pkg_name=percona-release_0.1-3.$(lsb_release -sc)_all.deb \
+RUN pkg_name=percona-release_0.1-4.$(lsb_release -sc)_all.deb \
   && curl -O https://repo.percona.com/apt/$pkg_name && dpkg -i $pkg_name && rm $pkg_name \
   && apt-get update \
   && apt-get install -y \
